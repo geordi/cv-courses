@@ -1,0 +1,79 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          lfs: true
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Install mdBook
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: mdbook
+          version: "0.5"
+
+      - name: Install mdBook-katex
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: mdbook-katex
+          version: "0.10"
+
+      - name: Install mdBook-sidenote
+        run: |
+          wget -q "https://github.com/geordi/mdbook-sidenote/releases/download/release/mdbook-sidenote"
+          chmod +x mdbook-sidenote
+          mkdir -p ~/bin
+          mv mdbook-sidenote ~/bin/
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build
+        run: RUST_BACKTRACE=1 mdbook build
+        env:
+          MDBOOK_OUTPUT__HTML__SITE_URL: /cv-courses/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./book
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
