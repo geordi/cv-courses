@@ -1,0 +1,13 @@
+[book]
+authors = ["Jan Gaura"]
+language = "en"
+title = "CV Courses"
+
+[output.html]
+additional-css = ["src/tufte.css"]
+mathjax-support = true
+
+[preprocessor.sidenote]
+
+[preprocessor.katex]
+after = ["links"]
