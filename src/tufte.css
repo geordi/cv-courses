@@ -1,0 +1,59 @@
+/* Tufte-style Sidenotes for mdBook */
+
+@media (min-width: 1000px) {
+    /* 1. Make the main content area wider overall */
+    .content main {
+        max-width: 1200px;
+    }
+
+    /* 2. Constrain the main paragraph text to the left side */
+    .content main p, 
+    .content main h1, 
+    .content main h2, 
+    .content main h3, 
+    .content main h4, 
+    .content main ul, 
+    .content main ol {
+        width: 55%;
+    }
+
+    /* 3. Style the sidenote and push it into the right margin */
+    .sidenote {
+        float: right;
+        clear: right;
+        margin-right: -80%;
+        width: 65%;
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
+        font-size: 0.85em;
+        line-height: 1.4;
+        color: #666; /* Slightly faded text */
+        border-left: 2px solid #eaeaea;
+        padding-left: 10px;
+    }
+}
+
+/* --------------------------------------------------------- */
+/* Sidenote Numbering & Toggle Styles                        */
+/* --------------------------------------------------------- */
+
+/* ONLY hide the checkbox input, keep the label visible */
+input.margin-toggle {
+    display: none;
+}
+
+/* Style the superscript numbers in the text and in the note */
+label.margin-toggle sup, 
+.sidenote-number {
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: super;
+    cursor: pointer; /* Indicates it can be clicked on mobile */
+    color: #444;
+}
+
+/* Add a tiny bit of space after the number inside the sidenote */
+.sidenote .sidenote-number {
+    margin-right: 0.3rem;
+    font-weight: bold;
+}
