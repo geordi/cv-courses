@@ -1,6 +1,6 @@
 # Summary
 
-- [Intro](./introduction_to_opencv/README.md)
+- [Introduction to OpenCV](./opencv_intro.md)
 - [Convolution](./convolution.md)
 - [Anisotropic filter](./anisotropic_filter.md)
 - [Discrete Fourier Transform](./dft_en.md)

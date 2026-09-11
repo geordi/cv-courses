@@ -1,6 +1,6 @@
 # Introduction to OpenCV – Digital Image Processing Exercises
 
-<p align="center"> <img src="./lena.png" width="30%"> <img src="./lena_gray.png" width="30%"> <img src="./gray_8uc1_img.png" width="30%"> </p>
+<p align="center"> <img src="./images/intro/lena.png" width="30%"> <img src="./images/intro/lena_gray.png" width="30%"> <img src="./images/intro/gray_8uc1_img.png" width="30%"> </p>
 
 **Figure**: Color image of Lena (left); grayscale image of Lena (middle); grayscale image of Lena with modified pixel and drawn rectangle (right).
 
