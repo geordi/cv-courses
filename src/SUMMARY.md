@@ -10,3 +10,4 @@
 - [Histogram Equalization](./histogram_equalization.md)
 - [Edge Detection](./edge_detection.md)
 - [Edge Thinning](./edge_thinning.md)
+- [Backprojection](./backprojection.md)
