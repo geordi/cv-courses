@@ -4,7 +4,7 @@ language = "en"
 title = "CV Courses"
 
 [output.html]
-additional-css = ["src/tufte.css"]
+additional-css = ["src/tufte.css", "src/custom.css"]
 mathjax-support = true
 
 [preprocessor.sidenote]

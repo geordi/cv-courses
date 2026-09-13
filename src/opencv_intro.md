@@ -50,14 +50,8 @@ Key concepts:
 - Images are stored using the `cv::Mat` data type
 - Images are stored **row by row in memory**
 <!--- OpenCV uses **🔵B 🟢G 🔴R (not 🔴R 🟢G 🔵B)** ordering for color images-->
-- OpenCV uses ![B](https://img.shields.io/badge/B-blue)
-![G](https://img.shields.io/badge/G-green)
-![R](https://img.shields.io/badge/R-red)
-(not
-![R](https://img.shields.io/badge/R-red)
-![G](https://img.shields.io/badge/G-green)
-![B](https://img.shields.io/badge/B-blue)
-)
+- OpenCV uses <img class="badge" src="https://img.shields.io/badge/B-blue"> <img class="badge" src="https://img.shields.io/badge/G-green"> <img class="badge" src="https://img.shields.io/badge/R-red"> (not <img class="badge" src="https://img.shields.io/badge/R-red"> <img class="badge" src="https://img.shields.io/badge/G-green"> <img class="badge" src="https://img.shields.io/badge/B-blue">)
+
 
 ## Project Overview
 
@@ -140,7 +134,8 @@ Color image type: `CV_8UC3`
 - 8 bits per channel
 - 3 channels per pixel
 - Each pixel = 3 bytes
-- Order = ![B](https://img.shields.io/badge/B-blue) ![G](https://img.shields.io/badge/G-green) ![R](https://img.shields.io/badge/R-red)
+- Order = <img class="badge" src="https://img.shields.io/badge/B-blue"> <img class="badge" src="https://img.shields.io/badge/G-green"> <img class="badge" src="https://img.shields.io/badge/R-red">
+
 
 Example pixel:
 
@@ -179,17 +174,15 @@ p(1,0)B p(1,0)G p(1,0)R
 p(1,1)B p(1,1)G p(1,1)R
 ```
 
-Important:
-
-> OpenCV uses OpenCV uses ![B](https://img.shields.io/badge/B-blue)
-![G](https://img.shields.io/badge/G-green)
-![R](https://img.shields.io/badge/R-red)
-, not
-![R](https://img.shields.io/badge/R-red)
-![G](https://img.shields.io/badge/G-green)
-![B](https://img.shields.io/badge/B-blue)
- ordering.
-
+> Once again, OpenCV uses
+> <img class="badge" src="https://img.shields.io/badge/B-blue">
+> <img class="badge" src="https://img.shields.io/badge/G-green">
+> <img class="badge" src="https://img.shields.io/badge/R-red">
+> format, not
+> <img class="badge" src="https://img.shields.io/badge/R-red">
+> <img class="badge" src="https://img.shields.io/badge/G-green">
+> <img class="badge" src="https://img.shields.io/badge/B-blue">!
+> That's why there's **BGR2GRAY**.
 
 ## Accessing Pixels Internally
 
@@ -234,9 +227,9 @@ cv::Mat src_8uc1_img = cv::imread("images/lena.png", cv::IMREAD_GRAYSCALE);
 
 That means:
 
-8UC3 → 8-bit, 3-channel (color)
+8UC3 → 8-bit, unsigned, 3-channel (color)
 
-8UC1 → 8-bit, 1-channel (grayscale)
+8UC1 → 8-bit, unsigned, 1-channel (grayscale)
 
 
 
@@ -248,15 +241,15 @@ We can convert a color image to grayscale using:
 cv::cvtColor(src_8uc3_img, gray_8uc1_img, cv::COLOR_BGR2GRAY);
 ```
 
-Important:
-> OpenCV uses OpenCV uses ![B](https://img.shields.io/badge/B-blue)
-![G](https://img.shields.io/badge/G-green)
-![R](https://img.shields.io/badge/R-red)
-format, not
-![R](https://img.shields.io/badge/R-red)
-![G](https://img.shields.io/badge/G-green)
-![B](https://img.shields.io/badge/B-blue)
-! Thats why there's **BRG**2GRAY.
+> And again, OpenCV uses
+> <img class="badge" src="https://img.shields.io/badge/B-blue">
+> <img class="badge" src="https://img.shields.io/badge/G-green">
+> <img class="badge" src="https://img.shields.io/badge/R-red">
+> format, not
+> <img class="badge" src="https://img.shields.io/badge/R-red">
+> <img class="badge" src="https://img.shields.io/badge/G-green">
+> <img class="badge" src="https://img.shields.io/badge/B-blue">!
+> That's why there's **BGR2GRAY**.
 
 We just converted color image `src_8uc3_img` to empty image `gray_8uc1_img` (you can create an empty image by declaring a variable, for example, as: `cv::Mat gray_8uc1_img`).
 
