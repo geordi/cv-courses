@@ -382,7 +382,7 @@ for (int y = 0; y < gradient_8uc1_img.rows; y++) {
 
 Result image after calling `cv::imshow( "Gradient 8uc1", gradient_8uc1_img );`:
 
-<p align="center"> <img src="gradient_8uc1_img.png" width="50%"> </p>
+<p align="center"> <img src="images/intro/gradient_8uc1_img.png" width="50%"> </p>
 
 This creates a horizontal gradient from black (0) to white (255).
 
