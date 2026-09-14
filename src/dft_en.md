@@ -67,5 +67,5 @@ For a conventional visualization of the spectrum, swap the first and third quadr
 ## Expected Output
 
 <p align="center">
-  <img src="result_images.png" alt="Expected output" width="80%">
+  <img src="images/dft/result_images.png" alt="Expected output" width="100%">
 </p>
