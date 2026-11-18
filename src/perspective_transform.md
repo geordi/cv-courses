@@ -197,8 +197,8 @@ Using all four point correspondences produces an $8 \times 8$ linear system that
 
 Use the following point correspondences, listed clockwise starting from the top-left corner:
 
-- **Flag:** $(0,0)$, $(323,0)$, $(323,215)$, $(0,215)$
-- **Building:** $(69,107)$, $(227,76)$, $(228,122)$, $(66,134)$
+- **Flag:** `(0, 0)`, `(323, 0)`, `(323, 215)`, `(0, 215)`
+- **Building:** `(69, 107)`, `(227, 76)`, `(228, 122)`, `(66,134)`
 
 Use OpenCV's `cv::solve` function to solve the system of linear equations.
 
